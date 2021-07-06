@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Muayene_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Ozgecmis" MaxLength="500" RowCount="3" />
+        <PropertyEditor Id="Soygecmis" MaxLength="500" RowCount="3" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Muayene">
+              <LayoutGroup Id="Muayene_col1">
+                <LayoutItem Id="Hikayesi" Index="2" RelativeSize="21.580928481806776" Removed="True" />
+                <LayoutItem Id="MuayeneDurum" Removed="True" />
+                <LayoutGroup Id="Autoc1b61764-a7a3-4325-8874-3b5d6e15c24d">
+                  <LayoutGroup Id="Auto8e74fb75-0a44-4168-bb09-4722d3ac1953">
+                    <LayoutItem Id="MuayeneDurum" ViewItem="MuayeneDurum" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="BelgeSatir_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="HastaListesi_Muayeneler_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Ozgecmis" Width="0" Index="-1" />
+        <ColumnInfo Id="Soygecmis" Width="81" Index="-1" />
+        <ColumnInfo Id="MuayeneDurum" Width="113" />
+      </Columns>
+    </ListView>
+    <ListView Id="Muayene_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Ozgecmis" Index="-1" Width="0" />
+        <ColumnInfo Id="Soygecmis" Index="-1" Width="81" />
+        <ColumnInfo Id="MuayeneDurum" Width="113" />
+      </Columns>
+    </ListView>
+    <ListView Id="RandevuTakip_Muayeneler_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Ozgecmis" Width="0" Index="-1" />
+        <ColumnInfo Id="Soygecmis" Width="81" Index="-1" />
+        <ColumnInfo Id="MuayeneDurum" Width="113" Index="3" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

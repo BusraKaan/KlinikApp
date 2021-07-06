@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Muayene_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Muayene">
+              <LayoutGroup Id="Muayene_col1">
+                <LayoutItem Id="Ozgecmis" RelativeSize="45.6953642384106" CaptionLocation="Top" Index="2" Removed="True" />
+                <LayoutItem Id="HastaAdSoyad" ViewItem="HastaAdSoyad" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

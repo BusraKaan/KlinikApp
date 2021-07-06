@@ -1,0 +1,1136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="MidKlinik">
+  <ActionDesign>
+    <Actions>
+      <Action Id="FaturaIrsaliyeAction" ImageName="Shopping_CashVoucher" />
+      <Action Id="GirisCikisOlusturAction" ImageName="CostAnalysis" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="MidKlinik.Module.BusinessObjects.BelgeBaslik" DefaultListViewShowAutoFilterRow="True" Caption="Fatura/İrsaliye Belgeleri">
+      <AppearanceRules>
+        <AppearanceRule Id="IrsaliyeFaturaControl" Criteria="[BelgeTur] = ##Enum#MidKlinik.Module.BusinessObjects.BelgeTurEnum,İrsaliye#" TargetItems="ToplamFiyat, KDVtoplam, KDVDahiltoplam, SatisFiyati" Visibility="Hide" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="MidKlinik.Module.BusinessObjects.Cari" Caption="Cari Listesi" />
+    <Class Name="MidKlinik.Module.BusinessObjects.Dokuman" DefaultListViewShowAutoFilterRow="True" Caption="Dökümanlar" />
+    <Class Name="MidKlinik.Module.BusinessObjects.GelirGider" Caption="Gelir/Gider Listesi">
+      <AppearanceRules>
+        <AppearanceRule Id="TaksitKontrol" TargetItems="TaksitSayisi" Criteria="[OdemeTür] &lt;&gt; ##Enum#MidKlinik.Module.BusinessObjects.OdemeTuruEnum,KrediKartı#" Visibility="Hide" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="MidKlinik.Module.BusinessObjects.GelirGiderKategori" Caption="Gelir/Gider Kategorileri" />
+    <Class Name="MidKlinik.Module.BusinessObjects.HastaIslemleri" Caption="Hasta İşlemleri">
+      <OwnMembers>
+        <Member Name="RandevuBitisSaati" EditMask="t" />
+        <Member Name="RandevuSaati" EditMask="t" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MidKlinik.Module.BusinessObjects.HastaListesi" DefaultListViewShowFindPanel="False" DefaultListViewShowAutoFilterRow="True" />
+    <Class Name="MidKlinik.Module.BusinessObjects.KDVOranlari" Caption="KDV Oranları" />
+    <Class Name="MidKlinik.Module.BusinessObjects.Muayene" DefaultListViewShowAutoFilterRow="True">
+      <OwnMembers>
+        <Member Name="MuayeneTarihi" EditMaskType="DateTime" EditMask="g" />
+      </OwnMembers>
+    </Class>
+    <Class Name="MidKlinik.Module.BusinessObjects.MuayeneDurum" Caption="Muayene Durum Listesi" />
+    <Class Name="MidKlinik.Module.BusinessObjects.MuayeneStok" Caption="Hastalara Kullanılan Ürünlerin Listesi" />
+    <Class Name="MidKlinik.Module.BusinessObjects.RandevuTakip" DefaultListViewShowAutoFilterRow="True">
+      <AppearanceRules>
+        <AppearanceRule Id="AllDayControl" TargetItems="RandevuSaati, RandevuBitisSaati" Criteria="[AllDay] = True" Enabled="False" IsNewNode="True" />
+      </AppearanceRules>
+    </Class>
+    <Class Name="MidKlinik.Module.BusinessObjects.UygulananIslemler" Caption="İşlemler Listesi" />
+    <Class Name="MidKlinik.Module.BusinessObjects.YetkiliKisiler" Caption="Yetkili Kişiler" />
+  </BOModel>
+  <NavigationItems NavigationStyle="NavBar">
+    <Items>
+      <Item Id="AnaIslemler" Caption="Ana İşlemler" ImageName="BO_Address" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="HastaListesi_ListView" ViewId="HastaListesi_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="RandevuTakip_ListView" ViewId="RandevuTakip_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Visible="False">
+        <Items>
+          <Item Id="BelgeBaslik_ListView" Removed="True" />
+          <Item Id="Cari_ListView" Removed="True" />
+          <Item Id="CariHareket_ListView" Removed="True" />
+          <Item Id="GelirGider_ListView" Removed="True" />
+          <Item Id="GelirGiderKategori_ListView" Removed="True" />
+          <Item Id="HastaIslemleri_ListView" Removed="True" />
+          <Item Id="HastaListesi_ListView" Removed="True" />
+          <Item Id="KDVOranlari_ListView" Removed="True" />
+          <Item Id="Muayene_ListView" Removed="True" />
+          <Item Id="MuayeneDurum_ListView" Removed="True" />
+          <Item Id="MuayeneStok_ListView" Removed="True" />
+          <Item Id="RandevuTakip_ListView" Removed="True" />
+          <Item Id="Stok_ListView" Removed="True" />
+          <Item Id="UygulananIslemler_ListView" Removed="True" />
+          <Item Id="YetkiliKisiler_ListView" ViewId="YetkiliKisiler_ListView" ObjectKey="" IsNewNode="True" Removed="True" />
+        </Items>
+      </Item>
+      <Item Id="HastaIslemleri" Caption="Hasta İslemleri" ImageName="BO_Resume" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="HastaIslemleri_ListView" ViewId="HastaIslemleri_ListView" ObjectKey="" Caption="Hastalara Uygulanan İşlemler" IsNewNode="True" />
+          <Item Id="Muayene_ListView" ViewId="Muayene_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="MuayeneStok_ListView" ViewId="MuayeneStok_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="KPI" Visible="False" />
+      <Item Id="Reports" Caption="Raporlama" ImageName="BO_Report">
+        <Items>
+          <Item Id="Analysis_ListView" Visible="False" />
+          <Item Id="Dashboards" Visible="False" />
+        </Items>
+      </Item>
+      <Item Id="SistemAyarlari" Caption="Sistem Ayarları" ImageName="ScatterChartLabelOptions" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="GelirGiderKategori_ListView" ViewId="GelirGiderKategori_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="MuayeneDurum_ListView" ViewId="MuayeneDurum_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="UygulananIslemler_ListView" ViewId="UygulananIslemler_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="StokKontrol" Caption="Alım-Satım İşlemleri" ImageName="Shopping_Wallet" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="BelgeBaslik_ListView" ViewId="BelgeBaslik_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Cari_ListView" ViewId="Cari_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="CariHareket_ListView" ViewId="CariHareket_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="GelirGider_ListView" ViewId="GelirGider_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="KDVOranlari_ListView" ViewId="KDVOranlari_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Stok_ListView" ViewId="Stok_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="19.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <Rules>
+      <RuleRequiredField Id="BelgeBaslik_BelgeNo" TargetPropertyName="BelgeNo" TargetType="MidKlinik.Module.BusinessObjects.BelgeBaslik" TargetContextIDs="Save" ResultType="Warning" MessageTemplateMustNotBeEmpty="&quot;{TargetPropertyName}&quot; boş olamaz." IsNewNode="True" />
+    </Rules>
+  </Validation>
+  <Views>
+    <ListView Id="BelgeBaslik_BelgeDokuman_ListView" AllowEdit="True" NewItemRowPosition="Bottom">
+      <Columns>
+        <ColumnInfo Id="HastaListesi" Index="-1" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="BelgeBaslik_BelgeSatir_ListView" AllowEdit="True" NewItemRowPosition="Bottom" ShowAutoFilterRow="False" ShowFindPanel="False">
+      <Columns>
+        <ColumnInfo Id="StokList.ParaBirimi" PropertyName="StokList.ParaBirimi" Index="-1" Width="94" LookupProperty="Birim" IsNewNode="True" />
+        <ColumnInfo Id="StokList.StokKodu" PropertyName="StokList.StokKodu" Index="-1" Width="94" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="StokList" Index="0" LookupProperty="StokKodu" LookupEditorMode="AllItemsWithSearch" Width="62" />
+        <ColumnInfo Id="StokList.StokAdi" PropertyName="StokList.StokAdi" Index="1" Width="109" AllowEdit="False" DataSourcePropertyIsNullMode="SelectNothing" IsNewNode="True" />
+        <ColumnInfo Id="StokList.StokMarka" PropertyName="StokList.StokMarka" Index="2" Width="126" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Miktar" Index="3" Width="55" />
+        <ColumnInfo Id="BirimFiyat" Width="80" Index="4" />
+        <ColumnInfo Id="KDVorani" PropertyName="KDVorani" Index="4" Width="94" IsNewNode="True" Removed="True" />
+        <ColumnInfo Id="KDVtutari" PropertyName="KDVtutari" Index="5" Width="81" AllowEdit="False" IsNewNode="True" Removed="True" />
+        <ColumnInfo Id="KDVharicTutar" Index="6" Width="188" AllowEdit="False" />
+        <ColumnInfo Id="BelgeBaslik" AllowEdit="False" Removed="True" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="BelgeBaslik_DetailView" AllowEdit="True">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="BelgeNo" AllowEdit="True" />
+        <PropertyEditor Id="CariBilgiler" LookupProperty="CariAdi" />
+        <PropertyEditor Id="CariBilgiler.Adres" PropertyName="CariBilgiler.Adres" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.CariAdi" PropertyName="CariBilgiler.CariAdi" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.CariKodu" PropertyName="CariBilgiler.CariKodu" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.Email" PropertyName="CariBilgiler.Email" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.Telefon" PropertyName="CariBilgiler.Telefon" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.VergiDairesi" PropertyName="CariBilgiler.VergiDairesi" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.VergiNumarasi" PropertyName="CariBilgiler.VergiNumarasi" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="CariBilgiler.YetkiliKisiler" PropertyName="CariBilgiler.YetkiliKisiler" View="Cari_YetkiliKisiler_ListView" IsNewNode="True" />
+        <PropertyEditor Id="KDVDahiltoplam" AllowEdit="False" />
+        <PropertyEditor Id="KDVtoplam" AllowEdit="False" />
+        <PropertyEditor Id="ToplamFiyat" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="35.559566787003611" Direction="Horizontal">
+            <LayoutGroup Id="Autob530def2-60bb-41dd-a916-e22c4d1aee93" ShowCaption="False" Caption="Autob530def2-60bb-41dd-a916-e22c4d1aee93(3)" Index="0" RelativeSize="49.315068493150683" IsNewNode="True">
+              <LayoutGroup Id="Item1" ShowCaption="True" Caption="Belge Bilgileri" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="BelgeTipi" ViewItem="BelgeTipi" Index="0" RelativeSize="24" IsNewNode="True" />
+                <LayoutItem Id="BelgeTarih" ViewItem="BelgeTarih" Index="1" RelativeSize="17.333333333333332" IsNewNode="True" />
+                <LayoutItem Id="BelgeNo" ViewItem="BelgeNo" Index="2" RelativeSize="17.333333333333332" IsNewNode="True" />
+                <LayoutItem Id="BelgeTur" ViewItem="BelgeTur" Index="3" RelativeSize="41.333333333333336" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="BelgeBaslik" ShowCaption="True" Caption="Belge Baslik" Direction="Horizontal" Index="1" RelativeSize="41.155234657039713" Removed="True">
+              <LayoutGroup Id="BelgeBaslik_col1" ShowCaption="False" Index="0" RelativeSize="49.864864864864863" Direction="Horizontal" IsNewNode="True" />
+              <LayoutGroup Id="BelgeBaslik_col2" ShowCaption="False" Index="1" RelativeSize="50.135135135135137" Caption="BelgeBaslik_col2" Direction="Horizontal" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Item2" ShowCaption="True" Caption="Cari Bilgileri" CaptionLocation="Top" Index="1" RelativeSize="50.684931506849317" IsNewNode="True">
+              <LayoutItem Id="CariBilgiler" ViewItem="CariBilgiler" Index="0" RelativeSize="24" IsNewNode="True" />
+              <LayoutItem Id="CariBilgiler.Adres" ViewItem="CariBilgiler.Adres" Index="1" RelativeSize="17.333333333333332" IsNewNode="True" />
+              <LayoutItem Id="CariBilgiler.Telefon" ViewItem="CariBilgiler.Telefon" Index="2" RelativeSize="17.333333333333332" IsNewNode="True" />
+              <LayoutItem Id="CariBilgiler.VergiNumarasi" ViewItem="CariBilgiler.VergiNumarasi" Index="3" RelativeSize="17.333333333333332" IsNewNode="True" />
+              <LayoutItem Id="CariBilgiler.VergiDairesi" ViewItem="CariBilgiler.VergiDairesi" Index="4" RelativeSize="24" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Item4" ShowCaption="True" Caption="Fiyat Bilgileri" CaptionLocation="Top" Index="1" RelativeSize="18.231046931407942" Direction="Horizontal" IsNewNode="True">
+            <LayoutGroup Id="Auto89b6a0ef-00fb-4fde-9426-1499e1ab0ca1" ShowCaption="False" Caption="" Index="0" RelativeSize="49.935483870967744" IsNewNode="True">
+              <LayoutItem Id="ToplamFiyat" ViewItem="ToplamFiyat" Index="0" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="KDVDahiltoplam" ViewItem="KDVDahiltoplam" Index="1" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Auto37aecb7e-b0b1-41c8-b9f5-01bed64398c7" ShowCaption="False" Caption="" Index="1" RelativeSize="50.064516129032256" IsNewNode="True">
+              <LayoutItem Id="KDVtoplam" ViewItem="KDVtoplam" Index="0" RelativeSize="50" IsNewNode="True" />
+              <LayoutItem Id="SatisFiyati" ViewItem="SatisFiyati" Index="1" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="BelgeBaslik_ListView">
+      <Columns>
+        <ColumnInfo Id="islemYapildiMi" Width="116" Index="-1" />
+        <ColumnInfo Id="BelgeNo" Index="0" />
+        <ColumnInfo Id="BelgeTipi" Width="76" Index="1" />
+        <ColumnInfo Id="BelgeTur" Width="82" Index="2" />
+        <ColumnInfo Id="CariBilgiler" LookupProperty="CariAdi" Width="79" Index="3" />
+        <ColumnInfo Id="BelgeTarih" Width="88" />
+        <ColumnInfo Id="ToplamFiyat" Width="233" />
+        <ColumnInfo Id="KDVtoplam" Width="90" />
+        <ColumnInfo Id="KDVDahiltoplam" Width="232" />
+        <ColumnInfo Id="SatisFiyati" Width="82" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="BelgeBaslik_LookupListView">
+      <Columns>
+        <ColumnInfo Id="BelgeNo" Index="0" />
+        <ColumnInfo Id="BelgeTipi" Index="1" Width="76" />
+        <ColumnInfo Id="BelgeTur" Index="2" Width="82" />
+        <ColumnInfo Id="CariBilgiler" Index="3" Width="79" />
+        <ColumnInfo Id="BelgeTarih" Width="88" />
+        <ColumnInfo Id="ToplamFiyat" Width="233" />
+        <ColumnInfo Id="KDVtoplam" Width="90" />
+        <ColumnInfo Id="KDVDahiltoplam" Width="232" />
+        <ColumnInfo Id="SatisFiyati" Width="82" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="BelgeSatir_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="StokList" LookupProperty="StokAdi" />
+        <PropertyEditor Id="StokList.KDVorani" PropertyName="StokList.KDVorani" IsNewNode="True" />
+        <PropertyEditor Id="StokList.StokAdi" PropertyName="StokList.StokAdi" IsNewNode="True" />
+        <PropertyEditor Id="StokList.StokKodu" PropertyName="StokList.StokKodu" IsNewNode="True" />
+        <PropertyEditor Id="StokList.StokMarka" PropertyName="StokList.StokMarka" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="BelgeSatir" RelativeSize="100">
+              <LayoutItem Id="StokList.StokKodu" ViewItem="StokList.StokKodu" Index="3" RelativeSize="4.6511627906976747" IsNewNode="True" />
+              <LayoutItem Id="StokList.StokAdi" ViewItem="StokList.StokAdi" Index="4" RelativeSize="4.6511627906976747" IsNewNode="True" />
+              <LayoutItem Id="StokList.StokMarka" ViewItem="StokList.StokMarka" Index="5" RelativeSize="4.6511627906976747" IsNewNode="True" />
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" Index="6" RelativeSize="70.304114490161" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="BelgeSatir_ListView" AllowEdit="False" NewItemRowPosition="Bottom">
+      <Columns>
+        <ColumnInfo Id="StokList" LookupProperty="StokKodu" Width="62" />
+        <ColumnInfo Id="BelgeBaslik" Width="88" LookupProperty="BelgeNo" />
+        <ColumnInfo Id="StokList.StokAdi" PropertyName="StokList.StokAdi" Index="2" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="StokList.StokMarka" PropertyName="StokList.StokMarka" Index="3" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="Miktar" Width="55" Index="4" />
+        <ColumnInfo Id="KDVtutari" Width="81" Index="5" />
+        <ColumnInfo Id="KDVharicTutar" Width="188" Index="6" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="BelgeSatir_LookupListView">
+      <Columns>
+        <ColumnInfo Id="StokList" Width="62" />
+        <ColumnInfo Id="BelgeBaslik" Width="88" />
+        <ColumnInfo Id="Miktar" Width="55" />
+        <ColumnInfo Id="KDVtutari" Width="81" />
+        <ColumnInfo Id="KDVharicTutar" Width="188" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="BelgeSatir_Stok_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Cari_CariHareketleri_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="Cari_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="Adres" RowCount="3" MaxLength="150" />
+        <PropertyEditor Id="Telefon" EditMask="(999) 000-0000" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="33.39350180505415">
+            <LayoutGroup Id="Cari" RelativeSize="100">
+              <LayoutGroup Id="Cari_col1" RelativeSize="49.940262843488647">
+                <LayoutItem Id="CariKodu" RelativeSize="26.086956521739129" />
+                <LayoutItem Id="CariAdi" RelativeSize="18.840579710144926" />
+                <LayoutItem Id="Telefon" RelativeSize="18.840579710144926" />
+                <LayoutItem Id="Email" RelativeSize="36.231884057971016" />
+              </LayoutGroup>
+              <LayoutGroup Id="Cari_col2" RelativeSize="50.059737156511353">
+                <LayoutItem Id="Adres" RelativeSize="55.072463768115945" />
+                <LayoutItem Id="VergiDairesi" RelativeSize="18.840579710144926" />
+                <LayoutItem Id="VergiNumarasi" RelativeSize="26.086956521739129" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="66.606498194945843">
+            <LayoutGroup Id="CariHareketleri" Index="0" RelativeSize="100">
+              <LayoutItem Id="CariHareketleri" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="YetkiliKisiler" Index="1" RelativeSize="100">
+              <LayoutItem Id="YetkiliKisiler" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Cari_ListView" MasterDetailMode="ListViewAndDetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <SplitLayout Direction="Vertical" />
+    </ListView>
+    <ListView Id="Cari_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Cari_YetkiliKisiler_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="CariHareket_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CariHareket" RelativeSize="100">
+              <LayoutGroup Id="CariHareket_col1" RelativeSize="49.940546967895365">
+                <LayoutItem Id="BelgeTarih" Index="0" RelativeSize="7.1287128712871288" />
+                <LayoutItem Id="KDVharicToplam" Index="1" RelativeSize="5.1485148514851486" />
+                <LayoutItem Id="KDVtoplam" Index="2" RelativeSize="87.722772277227719" />
+                <LayoutItem Id="BelgeNo" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CariHareket_col2" RelativeSize="50.059453032104635">
+                <LayoutItem Id="KDVdahilToplam" RelativeSize="7.1287128712871288" />
+                <LayoutItem Id="BelgeTur" RelativeSize="5.1485148514851486" />
+                <LayoutItem Id="BelgeTip" RelativeSize="87.722772277227719" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CariHareket_ListView">
+      <Columns>
+        <ColumnInfo Id="CariBilgileri" LookupProperty="CariAdi" Width="88" Index="0" />
+        <ColumnInfo Id="BelgeNo" Index="1" />
+        <ColumnInfo Id="BelgeTarih" Width="88" Index="2" />
+        <ColumnInfo Id="BelgeTur" Width="82" Index="3" />
+        <ColumnInfo Id="BelgeTip" Width="76" Index="4" />
+        <ColumnInfo Id="KDVharicToplam" Width="160" Index="5" />
+        <ColumnInfo Id="KDVtoplam" Width="90" Index="6" />
+        <ColumnInfo Id="KDVdahilToplam" Width="159" Index="7" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="CariHareket_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="Dokuman_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="Dokuman_ListView" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="BelgeDokuman" Index="-1" />
+        <ColumnInfo Id="HastaListesi" LookupProperty="HastaAdSoyad" Index="-1" />
+        <ColumnInfo Id="BelgeDokuman.BelgeNo" PropertyName="BelgeDokuman.BelgeNo" Index="1" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="BelgeDokuman.BelgeTur" PropertyName="BelgeDokuman.BelgeTur" Index="2" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="HastaListesi.HastaAdSoyad" PropertyName="HastaListesi.HastaAdSoyad" Index="3" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="HastaListesi.TCKimlikNumarası" PropertyName="HastaListesi.TCKimlikNumarası" Index="4" Width="94" IsNewNode="True" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Dokuman_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="GelirGider_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="Aciklama" RowCount="2" />
+        <PropertyEditor Id="Kategori" LookupProperty="KategoriAdi" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100" Direction="Vertical">
+          <LayoutGroup Id="SimpleEditors" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True" Removed="True">
+            <LayoutGroup Id="Item1" ShowCaption="True" Caption="Gelir/Gider İşlemleri" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Autoc02e5cde-430a-4410-bdfb-eed414ce5d68" ShowCaption="False" Caption="Autoc02e5cde-430a-4410-bdfb-eed414ce5d68(5)" Index="0" RelativeSize="99.881516587677723" Direction="Vertical" IsNewNode="True">
+                <LayoutGroup Id="Autoc30527bd-cea3-47f5-9540-adb77d626e12" ShowCaption="False" Caption="Autoc30527bd-cea3-47f5-9540-adb77d626e12(5)" Direction="Horizontal" Index="0" RelativeSize="19.009900990099009" IsNewNode="True">
+                  <LayoutGroup Id="Autoa852f8ac-6022-46f3-8f4f-ffbe6f6444a1" ShowCaption="False" Caption="Autoa852f8ac-6022-46f3-8f4f-ffbe6f6444a1(6)" Index="0" RelativeSize="49.703440094899172" IsNewNode="True">
+                    <LayoutItem Id="Kategori" ViewItem="Kategori" Index="0" RelativeSize="37.5" IsNewNode="True" />
+                    <LayoutItem Id="OdemeTür" ViewItem="OdemeTür" Index="1" RelativeSize="27.083333333333332" IsNewNode="True" />
+                    <LayoutItem Id="TaksitSayisi" ViewItem="TaksitSayisi" Index="2" RelativeSize="35.416666666666664" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto5120dfd0-e204-4aa9-a4d0-f3a9602413c3" ShowCaption="False" Caption="Auto5120dfd0-e204-4aa9-a4d0-f3a9602413c3(10)" Index="1" RelativeSize="50.296559905100828" IsNewNode="True">
+                    <LayoutItem Id="ParaHareketTür" ViewItem="ParaHareketTür" Index="0" RelativeSize="37.5" IsNewNode="True" />
+                    <LayoutItem Id="Ucret" ViewItem="Ucret" Index="1" RelativeSize="27.083333333333332" IsNewNode="True" />
+                    <LayoutItem Id="OdemeTarihi" ViewItem="OdemeTarihi" Index="2" RelativeSize="35.416666666666664" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="Aciklama" ViewItem="Aciklama" CaptionLocation="Top" Index="1" RelativeSize="80.990099009900987" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Auto021d9a42-6782-4524-8074-b6b6495fa971" ShowCaption="False" Caption="Auto021d9a42-6782-4524-8074-b6b6495fa971(8)" Index="1" RelativeSize="0.11848341232227488" Direction="Horizontal" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="GelirGider_ListView" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="Kategori" LookupProperty="KategoriAdi" Width="132" />
+        <ColumnInfo Id="ParaHareketTür" Width="95" />
+        <ColumnInfo Id="OdemeTür" Width="92" />
+        <ColumnInfo Id="TaksitSayisi" Width="91" SortIndex="0" SortOrder="Descending" />
+        <ColumnInfo Id="Aciklama" Width="71" />
+        <ColumnInfo Id="OdemeTarihi" Width="98" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="GelirGider_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="GelirGiderKategori_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="GelirGiderKategori_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="GelirGiderKategori_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="HastaIslemleri_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="Islemler" LookupProperty="IslemAdi" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="HastaIslemleri" RelativeSize="100">
+              <LayoutGroup Id="HastaIslemleri_col1" RelativeSize="49.93742177722153">
+                <LayoutItem Id="Islemler" Index="0" RelativeSize="8" />
+                <LayoutItem Id="SeansSayisi" Index="1" RelativeSize="5.7777777777777777" />
+                <LayoutItem Id="SeansAraligi" Index="2" RelativeSize="5.7777777777777777" />
+                <LayoutItem Id="AralikTuru" ViewItem="AralikTuru" Index="3" RelativeSize="80.444444444444443" IsNewNode="True" />
+                <LayoutItem Id="kayitControl" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="HastaIslemleri_col2" RelativeSize="50.06257822277847">
+                <LayoutItem Id="ilkSeansTrh" RelativeSize="8" Index="0" />
+                <LayoutItem Id="RandevuSaati" RelativeSize="5.7777777777777777" Index="1" />
+                <LayoutItem Id="RandevuBitisSaati" RelativeSize="86.222222222222229" Index="2" />
+                <LayoutItem Id="AralikTuru" RelativeSize="8" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="HastaIslemleri_ListView" Caption="Hastalara Uygulanan İşlemler">
+      <Columns>
+        <ColumnInfo Id="Islemler" LookupProperty="IslemAdi" Index="-1" />
+        <ColumnInfo Id="kayitControl" Index="-1" />
+        <ColumnInfo Id="Muayene" Index="-1" />
+        <ColumnInfo Id="Muayene.HastaListesi.TelefonNo" PropertyName="Muayene.HastaListesi.TelefonNo" Index="-1" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="Muayene.MuayeneTarihi" PropertyName="Muayene.MuayeneTarihi" Index="0" Width="108" IsNewNode="True" />
+        <ColumnInfo Id="Muayene.HastaListesi.HastaAdSoyad" PropertyName="Muayene.HastaListesi.HastaAdSoyad" Index="1" Width="226" IsNewNode="True" />
+        <ColumnInfo Id="Islemler.IslemAdi" PropertyName="Islemler.IslemAdi" Index="2" Width="117" IsNewNode="True" />
+        <ColumnInfo Id="Muayene.Bulgular" PropertyName="Muayene.Bulgular" Index="3" Width="119" IsNewNode="True" />
+        <ColumnInfo Id="SeansSayisi" Index="4" Width="92" />
+        <ColumnInfo Id="SeansAraligi" Index="5" Width="95" />
+        <ColumnInfo Id="AralikTuru" Index="6" Width="122" />
+        <ColumnInfo Id="ilkSeansTrh" Index="7" Width="109" />
+        <ColumnInfo Id="RandevuSaati" Index="8" Width="102" />
+        <ColumnInfo Id="RandevuBitisSaati" Index="9" Width="129" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="HastaIslemleri_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="HastaListesi_DetailView" CaptionVerticalAlignment="Bottom">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="HastaKayitTarihi" AllowEdit="False" />
+        <PropertyEditor Id="TelefonNo" EditMask="(999) 000-0000" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="28.674698795180724">
+            <LayoutGroup Id="HastaListesi" RelativeSize="100">
+              <LayoutGroup Id="HastaListesi_col1" RelativeSize="50">
+                <LayoutGroup Id="Auto2864decb-b99c-45d8-ae8c-f490b07700ba" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="47.368421052631582" IsNewNode="True">
+                  <LayoutItem Id="TCKimlikNumarası" ViewItem="TCKimlikNumarası" Index="0" RelativeSize="50.765306122448976" IsNewNode="True" />
+                  <LayoutItem Id="dogumTarihi" ViewItem="dogumTarihi" Index="1" RelativeSize="49.234693877551024" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autocac6d57a-8fe6-43a7-ba27-1dcecbcc3fdb" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="52.631578947368418" IsNewNode="True">
+                  <LayoutItem Id="HastaAd" ViewItem="HastaAd" Index="0" RelativeSize="50.765306122448976" IsNewNode="True" />
+                  <LayoutItem Id="HastaSoyad" ViewItem="HastaSoyad" Index="1" RelativeSize="49.234693877551024" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="dogumTarihi" Index="3" RelativeSize="29.032258064516128" Removed="True" />
+                <LayoutItem Id="HastaAd" RelativeSize="20.967741935483872" Removed="True" />
+                <LayoutItem Id="HastaAdSoyad" Removed="True" />
+                <LayoutItem Id="HastaSoyad" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="TCKimlikNumarası" RelativeSize="29.032258064516128" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="HastaListesi_col2" RelativeSize="50">
+                <LayoutGroup Id="Autoa4983820-e34f-43a4-89ed-ddfb31bbcebb" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="47.368421052631582" IsNewNode="True">
+                  <LayoutItem Id="TelefonNo" ViewItem="TelefonNo" Index="0" RelativeSize="49.234693877551024" IsNewNode="True" />
+                  <LayoutItem Id="cinsiyet" ViewItem="cinsiyet" Index="1" RelativeSize="50.765306122448976" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto6aca5d50-222a-4e5f-b459-5cacd23aabd0" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="52.631578947368418" IsNewNode="True">
+                  <LayoutItem Id="KanGrubu" ViewItem="KanGrubu" Index="0" RelativeSize="49.489795918367349" IsNewNode="True" />
+                  <LayoutItem Id="HastaKayitTarihi" ViewItem="HastaKayitTarihi" Index="1" RelativeSize="50.510204081632651" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="KanGrubu" RelativeSize="26.530612244897959" Index="1" Removed="True" />
+                <LayoutItem Id="HastaKayitTarihi" RelativeSize="36.734693877551024" Index="2" Removed="True" />
+                <LayoutItem Id="cinsiyet" RelativeSize="20.967741935483872" Removed="True" />
+                <LayoutItem Id="TelefonNo" RelativeSize="29.032258064516128" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="71.325301204819283">
+            <LayoutGroup Id="Muayeneler" RelativeSize="100">
+              <LayoutItem Id="Muayeneler" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="HastaDokumanlari" RelativeSize="100">
+              <LayoutItem Id="HastaDokumanlari" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="HastaListesi_HastaDokumanlari_ListView" AllowEdit="True" NewItemRowPosition="Bottom">
+      <Columns>
+        <ColumnInfo Id="BelgeDokuman" Index="-1" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="HastaListesi_ListView" MasterDetailMode="ListViewAndDetailView" NewItemRowPosition="Top" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="HastaAd" Index="-1" />
+        <ColumnInfo Id="HastaSoyad" Index="-1" />
+        <ColumnInfo Id="Oid" Index="-1" />
+        <ColumnInfo Id="TCKimlikNumarası" Width="127" />
+        <ColumnInfo Id="HastaAdSoyad" Index="1" Width="110" />
+        <ColumnInfo Id="dogumTarihi" Index="2" Width="96" />
+        <ColumnInfo Id="TelefonNo" Index="3" Width="82" />
+        <ColumnInfo Id="cinsiyet" Index="4" Width="64" />
+        <ColumnInfo Id="KanGrubu" Index="5" Width="79" />
+        <ColumnInfo Id="HastaKayitTarihi" Index="6" Width="120" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <SplitLayout Direction="Vertical" />
+    </ListView>
+    <ListView Id="HastaListesi_LookupListView" ShowAutoFilterRow="False" ShowFindPanel="True">
+      <Columns>
+        <ColumnInfo Id="HastaAd" Index="-1" />
+        <ColumnInfo Id="HastaKayitTarihi" Index="-1" />
+        <ColumnInfo Id="HastaSoyad" Index="-1" />
+        <ColumnInfo Id="KanGrubu" Index="-1" />
+        <ColumnInfo Id="HastaAdSoyad" Index="1" />
+        <ColumnInfo Id="dogumTarihi" Index="2" />
+        <ColumnInfo Id="TelefonNo" Index="3" />
+        <ColumnInfo Id="cinsiyet" Index="4" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="HastaListesi_Muayeneler_ListView">
+      <Columns>
+        <ColumnInfo Id="kayit" Index="-1" />
+        <ColumnInfo Id="Randevu" Index="-1" />
+        <ColumnInfo Id="MuayeneTarihi" Width="108" />
+        <ColumnInfo Id="RandevuSaati" Width="102" />
+        <ColumnInfo Id="Durum" LookupProperty="Durum" />
+        <ColumnInfo Id="Sikayeti" Width="64" />
+        <ColumnInfo Id="Hikayesi" Width="66" />
+        <ColumnInfo Id="Bulgular" Width="66" Index="5" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="KDVOranlari_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="KDVOranlari_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="KDVOranlari_LookupListView">
+      <Columns>
+        <ColumnInfo Id="KDVorani" Width="72" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="Muayene_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="Aciklama" RowCount="3" />
+        <PropertyEditor Id="Bulgular" RowCount="3" MaxLength="500" />
+        <PropertyEditor Id="Durum" LookupProperty="Durum" />
+        <PropertyEditor Id="HastaListesi" PropertyName="HastaListesi" LookupProperty="HastaAdSoyad" AllowEdit="True" IsNewNode="True" />
+        <PropertyEditor Id="Hikayesi" RowCount="3" MaxLength="500" />
+        <PropertyEditor Id="MuayeneTarihi" EditMaskType="DateTime" EditMask="d" />
+        <PropertyEditor Id="Sikayeti" MaxLength="500" RowCount="3" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="61.552346570397113">
+            <LayoutGroup Id="Muayene" ShowCaption="True" Index="0" RelativeSize="32.551319648093845" IsNewNode="True" Removed="True">
+              <LayoutGroup Id="Muayene_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Autoc1b61764-a7a3-4325-8874-3b5d6e15c24d" ShowCaption="False" Caption="Autoc1b61764-a7a3-4325-8874-3b5d6e15c24d(5)" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Auto8e74fb75-0a44-4168-bb09-4722d3ac1953" ShowCaption="False" Caption="Auto8e74fb75-0a44-4168-bb09-4722d3ac1953(6)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto532ee76a-30ea-4095-85de-5becc8902aae" ShowCaption="False" Caption="Auto532ee76a-30ea-4095-85de-5becc8902aae(7)" Index="0" RelativeSize="24.94033412887828" IsNewNode="True">
+                      <LayoutItem Id="HastaListesi" ViewItem="HastaListesi" Index="0" RelativeSize="50" IsNewNode="True" />
+                      <LayoutItem Id="RandevuSaati" ViewItem="RandevuSaati" Index="1" RelativeSize="50" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto137942a5-a806-43ef-8437-6d3beea33cd5" ShowCaption="False" Caption="Auto137942a5-a806-43ef-8437-6d3beea33cd5(10)" Index="1" RelativeSize="24.94033412887828" IsNewNode="True">
+                      <LayoutItem Id="Durum" ViewItem="Durum" Index="0" RelativeSize="50" IsNewNode="True" />
+                      <LayoutItem Id="MuayeneTarihi" ViewItem="MuayeneTarihi" Index="1" RelativeSize="50" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutItem Id="Aciklama" ViewItem="Aciklama" Index="2" RelativeSize="50.119331742243439" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="67.448680351906162" Caption="Hasta Detay" IsNewNode="True">
+              <LayoutGroup Id="Auto4607eb0d-a22f-45dc-8e29-e7ff7d109b5b" ShowCaption="False" Caption="Auto4607eb0d-a22f-45dc-8e29-e7ff7d109b5b(8)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Sikayeti" ViewItem="Sikayeti" CaptionLocation="Top" Index="0" RelativeSize="31.861575178997612" IsNewNode="True" />
+                <LayoutItem Id="Hikayesi" ViewItem="Hikayesi" Index="1" RelativeSize="34.367541766109788" CaptionLocation="Top" IsNewNode="True" />
+                <LayoutItem Id="Bulgular" ViewItem="Bulgular" CaptionLocation="Top" Index="2" RelativeSize="33.7708830548926" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="38.447653429602887">
+            <LayoutGroup Id="HastaIslemleri" RelativeSize="100">
+              <LayoutItem Id="HastaIslemleri" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="MuayeneStokBilgisi" RelativeSize="100">
+              <LayoutItem Id="MuayeneStokBilgisi" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Muayene_HastaIslemleri_ListView" AllowEdit="True" NewItemRowPosition="Bottom" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="kayitControl" Index="-1" Width="58" />
+        <ColumnInfo Id="Oid" Width="82" />
+        <ColumnInfo Id="Islemler" LookupProperty="IslemAdi" Index="0" Width="66" />
+        <ColumnInfo Id="SeansSayisi" Index="1" Width="92" />
+        <ColumnInfo Id="Muayene" Width="82" />
+        <ColumnInfo Id="SeansAraligi" Index="2" Width="95" />
+        <ColumnInfo Id="AralikTuru" Index="3" Width="122" />
+        <ColumnInfo Id="ilkSeansTrh" Index="4" Width="109" />
+        <ColumnInfo Id="RandevuSaati" EditMaskType="DateTime" EditMask="t" Index="5" Width="102" />
+        <ColumnInfo Id="RandevuBitisSaati" EditMaskType="DateTime" EditMask="t" Index="6" Width="129" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Muayene_ListView" Caption="Hasta Muayeneleri">
+      <Columns>
+        <ColumnInfo Id="kayit" Width="46" Index="-1" />
+        <ColumnInfo Id="Randevu" Index="-1" />
+        <ColumnInfo Id="HastaListesi" LookupProperty="HastaAdSoyad" Index="0" Width="88" />
+        <ColumnInfo Id="MuayeneTarihi" Width="108" Index="1" />
+        <ColumnInfo Id="RandevuSaati" Width="104" Index="2" />
+        <ColumnInfo Id="Durum" LookupProperty="Durum" Index="3" Width="113" />
+        <ColumnInfo Id="Sikayeti" Index="4" Width="64" />
+        <ColumnInfo Id="Hikayesi" Index="5" Width="66" />
+        <ColumnInfo Id="Bulgular" Index="6" Width="77" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Muayene_LookupListView" ShowAutoFilterRow="False" ShowFindPanel="True">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Muayene_MuayeneStokBilgisi_ListView" AllowEdit="True" NewItemRowPosition="Bottom">
+      <Columns>
+        <ColumnInfo Id="kayitControl" Index="-1" />
+        <ColumnInfo Id="StokList.StokKodu" PropertyName="StokList.StokKodu" Index="-1" Width="119" IsNewNode="True" />
+        <ColumnInfo Id="StokList" Width="62" LookupProperty="StokKodu" />
+        <ColumnInfo Id="StokList.StokAdi" PropertyName="StokList.StokAdi" Index="1" Width="109" IsNewNode="True" />
+        <ColumnInfo Id="StokList.StokMarka" PropertyName="StokList.StokMarka" Index="2" Width="126" IsNewNode="True" />
+        <ColumnInfo Id="Miktar" Index="3" Width="55" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="MuayeneDurum_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="MuayeneDurum_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="MuayeneDurum_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="MuayeneStok_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="StokList" LookupProperty="StokKodu" />
+        <PropertyEditor Id="StokList.StokAdi" PropertyName="StokList.StokAdi" IsNewNode="True" />
+        <PropertyEditor Id="StokList.StokMarka" PropertyName="StokList.StokMarka" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="MuayeneStok" RelativeSize="100" Direction="Horizontal">
+              <LayoutGroup Id="Autob7886f0d-3360-4b34-86c0-4da99049b370" ShowCaption="False" Caption="" Index="0" RelativeSize="49.939540507859732" IsNewNode="True">
+                <LayoutItem Id="StokList" ViewItem="StokList" Index="0" RelativeSize="7.214428857715431" IsNewNode="True" />
+                <LayoutItem Id="StokList.StokAdi" ViewItem="StokList.StokAdi" Index="1" RelativeSize="92.785571142284567" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Autode1fc4dc-5f6b-4fcc-8dc4-8c19f20d71cb" ShowCaption="False" Caption="" Index="1" RelativeSize="50.060459492140268" IsNewNode="True">
+                <LayoutItem Id="Miktar" ViewItem="Miktar" Index="0" RelativeSize="7.214428857715431" IsNewNode="True" />
+                <LayoutItem Id="StokList.StokMarka" ViewItem="StokList.StokMarka" Index="1" RelativeSize="92.785571142284567" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Miktar" Index="3" RelativeSize="82.364729458917836" Removed="True" />
+              <LayoutItem Id="kayitControl" Removed="True" />
+              <LayoutItem Id="StokList" RelativeSize="7.214428857715431" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="MuayeneStok_ListView">
+      <Columns>
+        <ColumnInfo Id="kayitControl" Index="-1" />
+        <ColumnInfo Id="MuayeneBilgileri" Index="0" LookupProperty="HastaListesi.HastaAdSoyad" Width="116" />
+        <ColumnInfo Id="MuayeneBilgileri.MuayeneTarihi" PropertyName="MuayeneBilgileri.MuayeneTarihi" Index="1" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="MuayeneBilgileri.RandevuSaati" PropertyName="MuayeneBilgileri.RandevuSaati" Index="2" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="MuayeneBilgileri.Randevu.Description" PropertyName="MuayeneBilgileri.Randevu.Description" Index="3" Width="94" Caption="Açıklama" IsNewNode="True" />
+        <ColumnInfo Id="StokList" LookupProperty="StokKodu" Width="62" Index="4" />
+        <ColumnInfo Id="StokList.StokAdi" PropertyName="StokList.StokAdi" Index="5" Width="109" IsNewNode="True" />
+        <ColumnInfo Id="StokList.StokMarka" PropertyName="StokList.StokMarka" Index="6" Width="126" IsNewNode="True" />
+        <ColumnInfo Id="Miktar" Index="7" Width="55" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="New" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="MuayeneStok_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="MuayeneStok_Stok_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="RandevuTakip_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="AllDay" Caption="Tüm Gün" />
+        <PropertyEditor Id="Description" Caption="Açıklama" />
+        <PropertyEditor Id="EndOn" EditMaskType="DateTime" EditMask="D" />
+        <PropertyEditor Id="Hastalar" LookupProperty="HastaAdSoyad" Caption="Hasta Adı" />
+        <PropertyEditor Id="Hastalar.cinsiyet" PropertyName="Hastalar.cinsiyet" IsNewNode="True" />
+        <PropertyEditor Id="Hastalar.TCKimlikNumarası" PropertyName="Hastalar.TCKimlikNumarası" IsNewNode="True" />
+        <PropertyEditor Id="Hastalar.TelefonNo" PropertyName="Hastalar.TelefonNo" IsNewNode="True" />
+        <PropertyEditor Id="Label" Caption="Etiket" />
+        <PropertyEditor Id="RandevuBitisSaati" EditMask="t" />
+        <PropertyEditor Id="RandevuSaati" EditMask="t" EditMaskType="DateTime" />
+        <PropertyEditor Id="StartOn" EditMaskType="DateTime" EditMask="D" />
+        <PropertyEditor Id="Status" Caption="Statü" />
+        <PropertyEditor Id="Subject" Caption="Başlık" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="40.433212996389891">
+            <LayoutGroup Id="RandevuTakip" RelativeSize="41.517857142857146" Caption="RandevuTakip">
+              <LayoutGroup Id="Autod062c7b2-4942-4f70-a671-129bed6e74c5" ShowCaption="False" Caption="Autod062c7b2-4942-4f70-a671-129bed6e74c5(4)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Hasta Bilgileri" Direction="Vertical" IsNewNode="True">
+                  <LayoutGroup Id="Autoebd0c1d7-e64c-4dd6-b3dc-f4c530ee1878" ShowCaption="False" Caption="Autoebd0c1d7-e64c-4dd6-b3dc-f4c530ee1878(6)" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Hastalar" ViewItem="Hastalar" Index="0" RelativeSize="100" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="RandevuTarihi" ViewItem="RandevuTarihi" Index="2" RelativeSize="24.615384615384617" Removed="True" />
+              <LayoutItem Id="Hastalar" RelativeSize="72" Removed="True" />
+              <LayoutItem Id="RandevuBitisSaati" RelativeSize="37.5" Removed="True" />
+              <LayoutItem Id="RandevuSaati" RelativeSize="27.083333333333332" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Event" RelativeSize="58.482142857142854" Index="1" Caption="Randevu Bilgileri">
+              <LayoutGroup Id="Event_col1" RelativeSize="48.175182481751825">
+                <LayoutItem Id="RandevuTarihi" ViewItem="RandevuTarihi" Index="0" RelativeSize="36.734693877551024" IsNewNode="True" />
+                <LayoutItem Id="EndOn" RelativeSize="20.967741935483872" Index="1" Removed="True" />
+                <LayoutItem Id="RandevuSaati" ViewItem="RandevuSaati" Index="1" RelativeSize="26.530612244897959" IsNewNode="True" />
+                <LayoutItem Id="RandevuBitisSaati" ViewItem="RandevuBitisSaati" Index="2" RelativeSize="36.734693877551024" IsNewNode="True" />
+                <LayoutItem Id="AllDay" ViewItem="AllDay" Index="3" RelativeSize="29.032258064516128" Removed="True" />
+                <LayoutItem Id="StartOn" RelativeSize="20.967741935483872" Removed="True" />
+                <LayoutItem Id="Subject" RelativeSize="29.032258064516128" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Event_col2" RelativeSize="51.824817518248175">
+                <LayoutItem Id="AllDay" ViewItem="AllDay" Index="0" RelativeSize="36.734693877551024" IsNewNode="True" />
+                <LayoutItem Id="Label" RelativeSize="26.530612244897959" Index="1" />
+                <LayoutItem Id="RecurrencePattern" RelativeSize="50" Index="2" Removed="True" />
+                <LayoutItem Id="Status" RelativeSize="36.734693877551024" Index="2" />
+                <LayoutItem Id="Location" RelativeSize="24" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="59.566787003610109" Caption="SizeableEditors">
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Randevu Detay" IsNewNode="True">
+              <LayoutItem Id="Subject" ViewItem="Subject" Index="0" RelativeSize="12.543554006968641" IsNewNode="True" />
+              <LayoutItem Id="Description" ViewItem="Description" Index="1" RelativeSize="87.456445993031352" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="Description" RelativeSize="29.142857142857142" Removed="True" />
+            <LayoutItem Id="RecurrenceInfoXml" RelativeSize="58.213256484149859" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RandevuTakip_ListView">
+      <Columns>
+        <ColumnInfo Id="Hastalar" Width="67" Index="0" LookupProperty="HastaAdSoyad" />
+        <ColumnInfo Id="RandevuTarihi" Width="106" Index="1" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="RandevuSaati" Width="102" Index="2" />
+        <ColumnInfo Id="RandevuBitisSaati" Width="129" Index="3" />
+        <ColumnInfo Id="Subject" Width="74" Index="4" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Description" Index="5" Caption="Açıklama" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="RandevuTakip_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Hastalar.TCKimlikNumarası" PropertyName="Hastalar.TCKimlikNumarası" Index="0" Width="172" IsNewNode="True" />
+        <ColumnInfo Id="Hastalar.HastaAdSoyad" PropertyName="Hastalar.HastaAdSoyad" Index="1" Width="151" IsNewNode="True" />
+        <ColumnInfo Id="Hastalar.TelefonNo" PropertyName="Hastalar.TelefonNo" Index="2" Width="127" IsNewNode="True" />
+        <ColumnInfo Id="Subject" Width="74" Index="3" />
+        <ColumnInfo Id="Description" PropertyName="Description" Index="4" Width="94" Caption="Açıklama" IsNewNode="True" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="RandevuTakip_Muayeneler_ListView">
+      <Columns>
+        <ColumnInfo Id="kayit" Index="-1" />
+        <ColumnInfo Id="HastaListesi" Index="0" Width="88" LookupProperty="HastaAdSoyad" />
+        <ColumnInfo Id="MuayeneTarihi" Width="108" Index="1" />
+        <ColumnInfo Id="RandevuSaati" Width="104" Index="2" />
+        <ColumnInfo Id="Sikayeti" Width="64" Index="4" />
+        <ColumnInfo Id="Hikayesi" Width="66" Index="5" />
+        <ColumnInfo Id="Bulgular" Width="66" Index="6" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="Stok_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="KDVorani" LookupProperty="KDVorani" />
+      </Items>
+    </DetailView>
+    <ListView Id="Stok_ListView" ShowAutoFilterRow="True" ShowFindPanel="False">
+      <Columns>
+        <ColumnInfo Id="BelgeSatir" Index="-1" />
+        <ColumnInfo Id="KDVorani" Index="-1" />
+        <ColumnInfo Id="StokKodu" Width="77" />
+        <ColumnInfo Id="StokAdi" Width="67" />
+        <ColumnInfo Id="Miktar" Width="87" />
+        <ColumnInfo Id="BirimFiyat" Width="83" />
+        <ColumnInfo Id="ParaBirimi" Width="82" />
+        <ColumnInfo Id="KDVorani.KDVorani" PropertyName="KDVorani.KDVorani" Index="5" Width="72" IsNewNode="True" />
+        <ColumnInfo Id="StokMarka" Index="6" Width="93" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Stok_LookupListView">
+      <Columns>
+        <ColumnInfo Id="BelgeSatir" Index="-1" />
+        <ColumnInfo Id="BirimFiyat" Index="-1" />
+        <ColumnInfo Id="KDVorani" Index="-1" />
+        <ColumnInfo Id="ParaBirimi" Index="-1" />
+        <ColumnInfo Id="StokKodu" Width="77" />
+        <ColumnInfo Id="StokAdi" Width="67" />
+        <ColumnInfo Id="StokMarka" Index="2" Width="93" />
+        <ColumnInfo Id="Miktar" Index="3" Width="87" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="Stok_MuayeneStokBilgileri_ListView">
+      <Columns>
+        <ColumnInfo Id="kayitControl" Width="91" Index="-1" />
+        <ColumnInfo Id="StokList" Width="62" />
+        <ColumnInfo Id="Miktar" Width="55" Index="1" />
+        <ColumnInfo Id="MuayeneBilgileri" Width="116" Index="2" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="FaturaIrsaliyeAction" IsNewNode="True" />
+        <ActionLink ActionId="GirisCikisOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="RandevuOlusturAction" IsNewNode="True" />
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="UygulananIslemler_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </DetailView>
+    <ListView Id="UygulananIslemler_ListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="UygulananIslemler_LookupListView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <DetailView Id="YetkiliKisiler_DetailView">
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+      <Items>
+        <PropertyEditor Id="YetkiliTelefon" EditMask="(999) 000-0000" />
+      </Items>
+    </DetailView>
+    <ListView Id="YetkiliKisiler_ListView">
+      <Columns>
+        <ColumnInfo Id="YetkiliAdSoyad" Width="111" />
+        <ColumnInfo Id="YetkiliTelefon" EditMask="(999) 000-0000" Width="100" />
+        <ColumnInfo Id="YetkiliEmail" Width="88" />
+        <ColumnInfo Id="CariBilgileri" LookupProperty="CariAdi" Width="88" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+    <ListView Id="YetkiliKisiler_LookupListView">
+      <Columns>
+        <ColumnInfo Id="YetkiliAdSoyad" Width="111" />
+        <ColumnInfo Id="YetkiliTelefon" Width="100" />
+        <ColumnInfo Id="YetkiliEmail" Width="88" />
+        <ColumnInfo Id="CariBilgileri" Width="88" LookupProperty="CariAdi" />
+      </Columns>
+      <HiddenActions>
+        <ActionLink ActionId="ResetViewSettings" IsNewNode="True" />
+        <ActionLink ActionId="ShowWorkflowInstances" IsNewNode="True" />
+      </HiddenActions>
+    </ListView>
+  </Views>
+</Application>

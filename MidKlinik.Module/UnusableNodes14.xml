@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Muayene_KullanılanStoklar_ListView" AllowEdit="True" NewItemRowPosition="Bottom" />
+    <DetailView Id="BelgeSatir_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

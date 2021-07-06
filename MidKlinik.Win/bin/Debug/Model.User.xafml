@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="RandevuOlusturAction" Caption="Randevu Oluştur" ImageName="BO_Scheduler" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="MidKlinik.Module.BusinessObjects.HastaListesi" DefaultListViewNewItemRowPosition="Top" DefaultListViewMasterDetailMode="ListViewAndDetailView" />
+  </BOModel>
+  <ModelEditorSettings State="Maximized" MaximizedOnScreen="\\.\DISPLAY1" X="2584" Y="-24" Width="1854" Height="1110">
+    <DetailViewCustomizationForm Top="441" Left="1445" Width="475" Height="500" />
+    <GridListEditorCustomizationForm Top="616" Left="1606" Width="314" Height="325" />
+    <ModelEditorControl CurrentAspect="(Default language)" SplitterPosition="0,3421875" SearchControlVisible="0" FocusedObject="Views\BelgeBaslik_ListView" GroupSettings="Actions=False;Views=True;BOModel=True" />
+    <SearchControl SearchSplitterPosition="323" SchemaVisible="1" />
+  </ModelEditorSettings>
+  <NavigationItems ShowImages="True" />
+  <Options DocumentManagerState="PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8RG9jdW1lbnRNYW5hZ2VyU3RhdGUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSI+DQogIDxEb2N1bWVudERlc2NyaXB0aW9ucz4NCiAgICA8RG9jdW1lbnREZXNjcmlwdGlvbj4NCiAgICAgIDxTZXJpYWxpemVkQ29udHJvbD5WaWV3SUQ9UmFuZGV2dVRha2lwX0xpc3RWaWV3JmFtcDtPYmplY3RLZXk9JmFtcDtTY3JvbGxQb3NpdGlvbj0mYW1wO09iamVjdENsYXNzTmFtZT1NaWRLbGluaWsuTW9kdWxlLkJ1c2luZXNzT2JqZWN0cy5SYW5kZXZ1VGFraXA8L1NlcmlhbGl6ZWRDb250cm9sPg0KICAgICAgPEltYWdlTmFtZT5UaW1lPC9JbWFnZU5hbWU+DQogICAgICA8Q2FwdGlvbj5SYW5kZXZ1IFRha2lwPC9DYXB0aW9uPg0KICAgICAgPENvbnRyb2xOYW1lPmIxZTg2Yjg3LTU5ZjQtNDY2Yi05NTNkLTFmYTRmNmEyYzg3YjwvQ29udHJvbE5hbWU+DQogICAgPC9Eb2N1bWVudERlc2NyaXB0aW9uPg0KICAgIDxEb2N1bWVudERlc2NyaXB0aW9uPg0KICAgICAgPFNlcmlhbGl6ZWRDb250cm9sPlZpZXdJRD1IYXN0YUxpc3Rlc2lfTGlzdFZpZXcmYW1wO09iamVjdEtleT0mYW1wO1Njcm9sbFBvc2l0aW9uPSZhbXA7T2JqZWN0Q2xhc3NOYW1lPU1pZEtsaW5pay5Nb2R1bGUuQnVzaW5lc3NPYmplY3RzLkhhc3RhTGlzdGVzaTwvU2VyaWFsaXplZENvbnRyb2w+DQogICAgICA8SW1hZ2VOYW1lPk1yczwvSW1hZ2VOYW1lPg0KICAgICAgPENhcHRpb24+SGFzdGEgTGlzdGVzaTwvQ2FwdGlvbj4NCiAgICAgIDxDb250cm9sTmFtZT40NjM2ZjE4ZC05NDIxLTQxNzctYmRiMC1iMzhmNWFjOWFhNTU8L0NvbnRyb2xOYW1lPg0KICAgIDwvRG9jdW1lbnREZXNjcmlwdGlvbj4NCiAgICA8RG9jdW1lbnREZXNjcmlwdGlvbj4NCiAgICAgIDxTZXJpYWxpemVkQ29udHJvbD5WaWV3SUQ9QmVsZ2VCYXNsaWtfTGlzdFZpZXcmYW1wO09iamVjdEtleT0mYW1wO1Njcm9sbFBvc2l0aW9uPSZhbXA7T2JqZWN0Q2xhc3NOYW1lPU1pZEtsaW5pay5Nb2R1bGUuQnVzaW5lc3NPYmplY3RzLkJlbGdlQmFzbGlrPC9TZXJpYWxpemVkQ29udHJvbD4NCiAgICAgIDxJbWFnZU5hbWU+QnVzaW5lc3NfUmVwb3J0PC9JbWFnZU5hbWU+DQogICAgICA8Q2FwdGlvbj5GYXR1cmEvxLByc2FsaXllIEJlbGdlbGVyaTwvQ2FwdGlvbj4NCiAgICAgIDxDb250cm9sTmFtZT4yYzM4ZGRiYy1kNDI0LTQ3MGMtODQ4MS0yOTRjMTc4MDEwMWM8L0NvbnRyb2xOYW1lPg0KICAgIDwvRG9jdW1lbnREZXNjcmlwdGlvbj4NCiAgPC9Eb2N1bWVudERlc2NyaXB0aW9ucz4NCiAgPFZpZXdMYXlvdXQ+SFFJQUFQSU9vSGZ5QUhmeUFhQjM4Z0ozOGdPaGQvSUVBUElCb0hmeUJmTEFvSGZ5Qm5meUI2RjM4Z2dBOGdDZ2QvSUpkL0lLb0hmeUMzZnlDcUIzOGd6eUFLQjM4ZzEzOGdxZ2QvSU9kL0lQb1hmeUVBRHlBS0YzOGhFQThnQ2hkL0lTQVBJQW9YZnlFL0lHOGdhaGQvSVVBUElNb0hmeUZYZnlGcUIzOGhlZ29IZnlHUElBb0hmeUdYZnlHcUIzOGh1Z29YZnlIQUR5QUtCMzhoMmdvSGZ5SG5meUg2QjM4aUIzOGlHZ2QvSWlvS0IzOGlOMzhpU2dkL0lsZC9JbW9YZnlKd0R5REtCMzhoVjM4aGFnZC9JWG9LQjM4aGp5QWFCMzhobDM4aHFnZC9JYm9LRjM4aHdBOGdDZ2QvSWRvS0IzOGg1MzhoK2dkL0lnZC9JaG9IZnlJcUNnZC9JamQvSW9vSGZ5SlhmeUpxRjM4aWtBOGd5Z2QvSVZkL0lXb0hmeUY2R2dkL0lZOGdLZ2QvSVpkL0lhb0hmeUc2Q2hkL0ljQVBJQW9IZnlIYUNnZC9JZWQvSXFvSGZ5SUhmeUs2QjM4aUtob0hmeUkzZnlMS0IzOGlWMzhpYWhkL0l0QVBJSG9IZnlMbmZ5TDZCMzhqQUFvSGZ5Qm5meUI2QjM4aGp5QUtGMzhqRUE4Z0tnZC9JeXFnQUFBQUFBQVBBL29IZnlNM2Z5TktCMzhpTjM4aldnZC9JbGQvSTJvWGZ5TndEeUI2QjM4aTUzOGpXZ2QvSXdkL0lXb0hmeUJuZnlPS0IzOGhqeUFLRjM4akVBOGdLZ2QvSXlxZ0FBQUFBQUFQQS9vSGZ5TTNmeU5LQjM4aU4zOGptZ2QvSWxkL0kyb1hmeU9nRHlCYUYzOGh3QThnQ2dkL0l4OUM4RG9IZnlHUElBb0hmeUkzZnlGcUIzOGlWMzhqdnlQQTRqVEdGNWIzVjBWbVZ5YzJsdmJnQVNJMHhoZVc5MWRGTmpZV3hsUm1GamRHOXlLVUF4TUN4WGFXUjBhRDB4TGpFMk5qWTJOall6UURFd0xFaGxhV2RvZEQweExqSXpNRGMyT1RJNEVrUnZZM1Z0Wlc1MFVISnZjR1Z5ZEdsbGN3dE5ZWGhVWVdKWGFXUjBhQXRQY21sbGJuUmhkR2x2YmdoV1pYSjBhV05oYkJkRWIyTjFiV1Z1ZEVkeWIzVndVSEp2Y0dWeWRHbGxjeFJGYm1GaWJHVkdjbVZsVEdGNWIzVjBUVzlrWlFkRVpXWmhkV3gwRlVWdVlXSnNaVk4wYVdOcmVWTndiR2wwZEdWeWN4bERkWE4wYjIxU1pYTnBlbVZhYjI1bFZHaHBZMnR1WlhOekJWTjBlV3hsR1Vac2IyRjBhVzVuUkc5amRXMWxiblJEYjI1MFlXbHVaWElOUkc5amRXMWxiblJ6U0c5emRCcE1iMkZrYVc1blNXNWthV05oZEc5eVVISnZjR1Z5ZEdsbGN4cEViMk4xYldWdWRGTmxiR1ZqZEc5eVVISnZjR1Z5ZEdsbGN4ZFhhVzVrYjNkelJHbGhiRzluVUhKdmNHVnlkR2xsY3dWSmRHVnRjd1ZKZEdWdE1RcFFZWEpsYm5ST1lXMWxEa1J2WTNWdFpXNTBSM0p2ZFhBd0NrbHpVMlZzWldOMFpXUUZTVzVrWlhnTFYybHVaRzkzVTNSaGRHVUdUbTl5YldGc0JsQnBibTVsWkFwUWNtOXdaWEowYVdWekNrbHpSbXh2WVhScGJtY0lURzlqWVhScGIyNE1RREVzV0Qwd1FERXNXVDB3QkZOcGVtVVZRREVzVjJsa2RHZzlNRUF4TEVobGFXZG9kRDB3Q0VselFXTjBhWFpsQkU1aGJXVWtZakZsT0RaaU9EY3ROVGxtTkMwME5qWmlMVGsxTTJRdE1XWmhOR1kyWVRKak9EZGlDRlI1Y0dWT1lXMWxDRVJ2WTNWdFpXNTBCVWwwWlcweUpEUTJNelptTVRoa0xUazBNakV0TkRFM055MWlaR0l3TFdJek9HWTFZV001WVdFMU5RVkpkR1Z0TXcxQU1TeFlQVEJBTWl4WlBUUXdHa0EwTEZkcFpIUm9QVEUyT1RKQU15eElaV2xuYUhROU56YzFKREpqTXpoa1pHSmpMV1EwTWpRdE5EY3dZeTA0TkRneExUSTVOR014Tnpnd01UQXhZd1ZKZEdWdE5BWlFZWEpsYm5RRVVtOXZkQWRGYkdWdFpXNTBCa3hsYm1kMGFBbFZibWwwVm1Gc2RXVUlWVzVwZEZSNWNHVUVVM1JoY2dneU5URTJORFE0TkJCRWIyTnJhVzVuUTI5dWRHRnBibVZ5QlVsMFpXMDFDa2h2Y21sNmIyNTBZV3dJTWpVeE5UTTNOamtGU1hSbGJUWU5SRzlqZFcxbGJuUkhjbTkxY0E9PTwvVmlld0xheW91dD4NCjwvRG9jdW1lbnRNYW5hZ2VyU3RhdGU+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" Palette="Amber" Skin="Office 2019 Colorful" ShowTabImage="True">
+    <PrintingSettings Margins="100, 100, 100, 100" PageHeaderFooter="&lt;XtraSerializer version=&quot;1.0&quot; application=&quot;XtraPrintingPageHeaderFooter&quot;&gt;&#xD;&#xA;  &lt;property name=&quot;Header&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;Content&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;    &lt;property name=&quot;LineAlignment&quot;&gt;Near&lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Font&quot;&gt;Microsoft Sans Serif, 7.8pt&lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;  &lt;property name=&quot;Footer&quot; isnull=&quot;true&quot; iskey=&quot;true&quot;&gt;&#xD;&#xA;    &lt;property name=&quot;Content&quot; iskey=&quot;true&quot; value=&quot;0&quot; /&gt;&#xD;&#xA;    &lt;property name=&quot;LineAlignment&quot;&gt;Near&lt;/property&gt;&#xD;&#xA;    &lt;property name=&quot;Font&quot;&gt;Microsoft Sans Serif, 7.8pt&lt;/property&gt;&#xD;&#xA;  &lt;/property&gt;&#xD;&#xA;&lt;/XtraSerializer&gt;" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerWindowsFormsModule" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="19.1.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="19.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Templates>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.Bars.LightStyleMainForm" DockManagerSettings="77u/PFh0cmFTZXJpYWxpemVyIHZlcnNpb249IjEuMCIgYXBwbGljYXRpb249IkRvY2tNYW5hZ2VyIj4NCiAgPHByb3BlcnR5IG5hbWU9IiNMYXlvdXRWZXJzaW9uIiAvPg0KICA8cHJvcGVydHkgbmFtZT0iI0xheW91dFNjYWxlRmFjdG9yIj5AMTAsV2lkdGg9MS4xNjY2NjY2M0AxMCxIZWlnaHQ9MS4yMzA3NjkyODwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJBbGxvd0dseXBoU2tpbm5pbmciPmZhbHNlPC9wcm9wZXJ0eT4NCiAgPHByb3BlcnR5IG5hbWU9IlN0eWxlIj5EZWZhdWx0PC9wcm9wZXJ0eT4NCiAgPHByb3BlcnR5IG5hbWU9IkF1dG9IaWRkZW5QYW5lbENhcHRpb25TaG93TW9kZSI+U2hvd0ZvckFsbFBhbmVsczwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJBdXRvSGlkZUNvbnRhaW5lcnMiIGlza2V5PSJ0cnVlIiB2YWx1ZT0iMCIgLz4NCiAgPHByb3BlcnR5IG5hbWU9IkRvY2tpbmdPcHRpb25zIiBpc251bGw9InRydWUiIGlza2V5PSJ0cnVlIj4NCiAgICA8cHJvcGVydHkgbmFtZT0iQXV0b0hpZGVQYW5lbFZlcnRpY2FsVGV4dE9yaWVudGF0aW9uIj5EZWZhdWx0PC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iVGFiYmVkUGFuZWxWZXJ0aWNhbFRleHRPcmllbnRhdGlvbiI+RGVmYXVsdDwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IkN1c3RvbVJlc2l6ZVpvbmVUaGlja25lc3MiPjA8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJDdXJzb3JGbG9hdENhbmNlbGVkIiBpc251bGw9InRydWUiIC8+DQogICAgPHByb3BlcnR5IG5hbWU9IkhpZGVJbW1lZGlhdGVseU9uQXV0b0hpZGUiPmZhbHNlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iQ2xvc2VBY3RpdmVUYWJPbmx5Ij50cnVlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iQ2xvc2VBY3RpdmVGbG9hdFRhYk9ubHkiPmZhbHNlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iU2hvd0NhcHRpb25Pbk1vdXNlSG92ZXIiPmZhbHNlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iU2hvd0NhcHRpb25JbWFnZSI+ZmFsc2U8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJBbGxvd1Jlc3RvcmVUb0F1dG9IaWRlQ29udGFpbmVyIj5mYWxzZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IkRvY2tQYW5lbEluVGFiQ29udGFpbmVyVGFiUmVnaW9uIj5Eb2NrSW1tZWRpYXRlbHk8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJEb2NrUGFuZWxJbkNhcHRpb25SZWdpb24iPkRlZmF1bHQ8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJTbmFwTW9kZSI+Tm9uZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IlNob3dNYXhpbWl6ZUJ1dHRvbiI+dHJ1ZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IlNob3dBdXRvSGlkZUJ1dHRvbiI+dHJ1ZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IlNob3dDbG9zZUJ1dHRvbiI+dHJ1ZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IkZsb2F0T25EYmxDbGljayI+dHJ1ZTwvcHJvcGVydHk+DQogIDwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJBY3RpdmVQYW5lbElEIj4tMTwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJYdHJhU2VyaWFsaXphYmxlU2NyZWVuQ29uZmlndXJhdGlvbiIgaXNrZXk9InRydWUiIHZhbHVlPSIxIj4NCiAgICA8cHJvcGVydHkgbmFtZT0iSXRlbTEiPkAxLFg9MEAxLFk9MEA0LFdpZHRoPTE5MjBANCxIZWlnaHQ9MTA4MDwvcHJvcGVydHk+DQogIDwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJQYW5lbHMiIGlza2V5PSJ0cnVlIiB2YWx1ZT0iMCIgLz4NCiAgPHByb3BlcnR5IG5hbWU9IlRvcFpJbmRleENvbnRyb2xzIiBpc2tleT0idHJ1ZSIgdmFsdWU9IjkiPg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJJdGVtMSIgdHlwZT0iU3lzdGVtLlN0cmluZyI+RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJEb2NrQ29udHJvbDwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9Ikl0ZW0yIiB0eXBlPSJTeXN0ZW0uU3RyaW5nIj5EZXZFeHByZXNzLlh0cmFCYXJzLlN0YW5kYWxvbmVCYXJEb2NrQ29udHJvbDwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9Ikl0ZW0zIiB0eXBlPSJTeXN0ZW0uU3RyaW5nIj5TeXN0ZW0uV2luZG93cy5Gb3Jtcy5TdGF0dXNCYXI8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJJdGVtNCIgdHlwZT0iU3lzdGVtLlN0cmluZyI+U3lzdGVtLldpbmRvd3MuRm9ybXMuTWVudVN0cmlwPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iSXRlbTUiIHR5cGU9IlN5c3RlbS5TdHJpbmciPlN5c3RlbS5XaW5kb3dzLkZvcm1zLlN0YXR1c1N0cmlwPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iSXRlbTYiIHR5cGU9IlN5c3RlbS5TdHJpbmciPkRldkV4cHJlc3MuWHRyYUJhcnMuUmliYm9uLlJpYmJvblN0YXR1c0JhcjwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9Ikl0ZW03IiB0eXBlPSJTeXN0ZW0uU3RyaW5nIj5EZXZFeHByZXNzLlh0cmFCYXJzLlJpYmJvbi5SaWJib25Db250cm9sPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iSXRlbTgiIHR5cGU9IlN5c3RlbS5TdHJpbmciPkRldkV4cHJlc3MuWHRyYUJhcnMuTmF2aWdhdGlvbi5PZmZpY2VOYXZpZ2F0aW9uQmFyPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iSXRlbTkiIHR5cGU9IlN5c3RlbS5TdHJpbmciPkRldkV4cHJlc3MuWHRyYUJhcnMuTmF2aWdhdGlvbi5UaWxlTmF2UGFuZTwvcHJvcGVydHk+DQogIDwvcHJvcGVydHk+DQo8L1h0cmFTZXJpYWxpemVyPg==" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="Default" State="Maximized" MaximizedOnScreen="\\.\DISPLAY1" X="224" Y="224" Width="926" Height="737" IsNewNode="True" />
+      </FormStates>
+      <NavBarCustomization Width="194" IsNewNode="True">
+        <NavBarGroupCustomization Id="Default" IsNewNode="True" />
+        <NavBarGroupCustomization Id="KPI" IsNewNode="True" />
+        <NavBarGroupCustomization Id="Reports" IsNewNode="True" />
+        <NavBarGroupCustomization Id="Workflow" IsNewNode="True" />
+      </NavBarCustomization>
+    </Template>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.LookupControlTemplate" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="Cari_LookupListView" IsNewNode="True" />
+        <FormState Id="GelirGiderKategori_LookupListView" IsNewNode="True" />
+        <FormState Id="HastaListesi_LookupListView" IsNewNode="True" />
+        <FormState Id="KDVOranlari_LookupListView" IsNewNode="True" />
+        <FormState Id="MuayeneDurum_LookupListView" Width="402" Height="353" IsNewNode="True" />
+        <FormState Id="ParaBirim_LookupListView" IsNewNode="True" />
+        <FormState Id="SarfMalzemeler_LookupListView" IsNewNode="True" />
+        <FormState Id="Stok_LookupListView" Width="448" Height="353" IsNewNode="True" />
+        <FormState Id="Urunler_LookupListView" IsNewNode="True" />
+        <FormState Id="UygulananIslemler_LookupListView" IsNewNode="True" />
+      </FormStates>
+    </Template>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.PopupForm" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="BelgeBaslik_DetailView" State="Maximized" MaximizedOnScreen="\\.\DISPLAY1" X="683" Y="248" Width="1162" Height="837" IsNewNode="True" />
+        <FormState Id="GelirGider_DetailView" State="Normal" X="594" Y="290" Width="625" Height="625" IsNewNode="True" />
+        <FormState Id="RandevuTakip_DetailView" State="Normal" X="479" Y="193" Width="625" Height="625" IsNewNode="True" />
+        <FormState Id="RuleSetValidationResult_ByTarget_Error_DetailView" State="Normal" X="683" Y="304" Width="554" Height="422" IsNewNode="True" />
+      </FormStates>
+    </Template>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.Ribbon.DetailRibbonFormV2" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="Analysis_ListView" IsNewNode="True" />
+        <FormState Id="BelgeBaslik_DetailView" IsNewNode="True" />
+        <FormState Id="BelgeBaslik_ListView" IsNewNode="True" />
+        <FormState Id="BelgeSatir_DetailView" State="Normal" X="64" Y="64" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="BelgeSatir_ListView" IsNewNode="True" />
+        <FormState Id="Cari_DetailView" IsNewNode="True" />
+        <FormState Id="Cari_ListView" IsNewNode="True" />
+        <FormState Id="CariHareket_ListView" IsNewNode="True" />
+        <FormState Id="DashboardData_ListView" IsNewNode="True" />
+        <FormState Id="Dokuman_DetailView" State="Normal" X="32" Y="32" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="Dokuman_ListView" IsNewNode="True" />
+        <FormState Id="Event_DetailView" IsNewNode="True" />
+        <FormState Id="Event_ListView" IsNewNode="True" />
+        <FormState Id="GelirGider_DetailView" IsNewNode="True" />
+        <FormState Id="GelirGider_ListView" IsNewNode="True" />
+        <FormState Id="GelirGiderKategori_DetailView" State="Normal" X="192" Y="192" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="GelirGiderKategori_ListView" IsNewNode="True" />
+        <FormState Id="HastaIslemleri_DetailView" State="Normal" X="64" Y="64" Width="913" Height="300" IsNewNode="True" />
+        <FormState Id="HastaIslemleri_ListView" IsNewNode="True" />
+        <FormState Id="HastaListesi_DetailView" State="Normal" X="26" Y="26" Width="1152" Height="625" IsNewNode="True" />
+        <FormState Id="HastaListesi_ListView" IsNewNode="True" />
+        <FormState Id="HastaSarfMalzemeleri_DetailView" State="Normal" X="128" Y="128" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="HastaUrunleri_DetailView" State="Normal" X="96" Y="96" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="KDVOranlari_DetailView" IsNewNode="True" />
+        <FormState Id="KDVOranlari_ListView" IsNewNode="True" />
+        <FormState Id="Muayene_DetailView" State="Maximized" MaximizedOnScreen="\\.\DISPLAY1" X="490" Y="4" Width="1730" Height="1110" IsNewNode="True" />
+        <FormState Id="Muayene_ListView" IsNewNode="True" />
+        <FormState Id="MuayeneDurum_DetailView" IsNewNode="True" />
+        <FormState Id="MuayeneDurum_ListView" IsNewNode="True" />
+        <FormState Id="MuayeneStok_DetailView" State="Normal" X="192" Y="192" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="MuayeneStok_ListView" IsNewNode="True" />
+        <FormState Id="RandevuTakip_DetailView" IsNewNode="True" />
+        <FormState Id="RandevuTakip_ListView" IsNewNode="True" />
+        <FormState Id="ReportDataV2_ListView" IsNewNode="True" />
+        <FormState Id="Resource_DetailView" State="Normal" X="96" Y="96" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="SarfMalzemeler_DetailView" State="Normal" X="2717" Y="260" Width="746" Height="625" IsNewNode="True" />
+        <FormState Id="SarfMalzemeler_ListView" IsNewNode="True" />
+        <FormState Id="Stok_DetailView" State="Normal" X="96" Y="96" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="Stok_ListView" IsNewNode="True" />
+        <FormState Id="Urunler_DetailView" IsNewNode="True" />
+        <FormState Id="Urunler_ListView" IsNewNode="True" />
+        <FormState Id="UygulananIslemler_DetailView" State="Normal" X="114" Y="114" Width="625" Height="625" IsNewNode="True" />
+        <FormState Id="UygulananIslemler_ListView" IsNewNode="True" />
+        <FormState Id="YetkiliKisiler_DetailView" State="Normal" X="468" Y="150" Width="933" Height="743" IsNewNode="True" />
+        <FormState Id="YetkiliKisiler_ListView" IsNewNode="True" />
+      </FormStates>
+    </Template>
+    <Template Id="DevExpress.ExpressApp.Win.Templates.Ribbon.LightStyleMainRibbonForm" DockManagerSettings="77u/PFh0cmFTZXJpYWxpemVyIHZlcnNpb249IjEuMCIgYXBwbGljYXRpb249IkRvY2tNYW5hZ2VyIj4NCiAgPHByb3BlcnR5IG5hbWU9IiNMYXlvdXRWZXJzaW9uIiAvPg0KICA8cHJvcGVydHkgbmFtZT0iI0xheW91dFNjYWxlRmFjdG9yIj5AMTAsV2lkdGg9MS4xNjY2NjY2M0AxMCxIZWlnaHQ9MS4yMzA3NjkyODwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJBbGxvd0dseXBoU2tpbm5pbmciPmZhbHNlPC9wcm9wZXJ0eT4NCiAgPHByb3BlcnR5IG5hbWU9IlN0eWxlIj5EZWZhdWx0PC9wcm9wZXJ0eT4NCiAgPHByb3BlcnR5IG5hbWU9IkF1dG9IaWRkZW5QYW5lbENhcHRpb25TaG93TW9kZSI+U2hvd0ZvckFsbFBhbmVsczwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJBdXRvSGlkZUNvbnRhaW5lcnMiIGlza2V5PSJ0cnVlIiB2YWx1ZT0iMCIgLz4NCiAgPHByb3BlcnR5IG5hbWU9IkRvY2tpbmdPcHRpb25zIiBpc251bGw9InRydWUiIGlza2V5PSJ0cnVlIj4NCiAgICA8cHJvcGVydHkgbmFtZT0iQXV0b0hpZGVQYW5lbFZlcnRpY2FsVGV4dE9yaWVudGF0aW9uIj5EZWZhdWx0PC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iVGFiYmVkUGFuZWxWZXJ0aWNhbFRleHRPcmllbnRhdGlvbiI+RGVmYXVsdDwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IkN1c3RvbVJlc2l6ZVpvbmVUaGlja25lc3MiPjA8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJDdXJzb3JGbG9hdENhbmNlbGVkIiBpc251bGw9InRydWUiIC8+DQogICAgPHByb3BlcnR5IG5hbWU9IkhpZGVJbW1lZGlhdGVseU9uQXV0b0hpZGUiPmZhbHNlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iQ2xvc2VBY3RpdmVUYWJPbmx5Ij50cnVlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iQ2xvc2VBY3RpdmVGbG9hdFRhYk9ubHkiPmZhbHNlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iU2hvd0NhcHRpb25Pbk1vdXNlSG92ZXIiPmZhbHNlPC9wcm9wZXJ0eT4NCiAgICA8cHJvcGVydHkgbmFtZT0iU2hvd0NhcHRpb25JbWFnZSI+ZmFsc2U8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJBbGxvd1Jlc3RvcmVUb0F1dG9IaWRlQ29udGFpbmVyIj5mYWxzZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IkRvY2tQYW5lbEluVGFiQ29udGFpbmVyVGFiUmVnaW9uIj5Eb2NrSW1tZWRpYXRlbHk8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJEb2NrUGFuZWxJbkNhcHRpb25SZWdpb24iPkRlZmF1bHQ8L3Byb3BlcnR5Pg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJTbmFwTW9kZSI+Tm9uZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IlNob3dNYXhpbWl6ZUJ1dHRvbiI+dHJ1ZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IlNob3dBdXRvSGlkZUJ1dHRvbiI+dHJ1ZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IlNob3dDbG9zZUJ1dHRvbiI+dHJ1ZTwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9IkZsb2F0T25EYmxDbGljayI+dHJ1ZTwvcHJvcGVydHk+DQogIDwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJBY3RpdmVQYW5lbElEIj4tMTwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJYdHJhU2VyaWFsaXphYmxlU2NyZWVuQ29uZmlndXJhdGlvbiIgaXNrZXk9InRydWUiIHZhbHVlPSIxIj4NCiAgICA8cHJvcGVydHkgbmFtZT0iSXRlbTEiPkAxLFg9MEAxLFk9MEA0LFdpZHRoPTE5MjBANCxIZWlnaHQ9MTA4MDwvcHJvcGVydHk+DQogIDwvcHJvcGVydHk+DQogIDxwcm9wZXJ0eSBuYW1lPSJQYW5lbHMiIGlza2V5PSJ0cnVlIiB2YWx1ZT0iMCIgLz4NCiAgPHByb3BlcnR5IG5hbWU9IlRvcFpJbmRleENvbnRyb2xzIiBpc2tleT0idHJ1ZSIgdmFsdWU9IjIiPg0KICAgIDxwcm9wZXJ0eSBuYW1lPSJJdGVtMSIgdHlwZT0iU3lzdGVtLlN0cmluZyI+RGV2RXhwcmVzcy5FeHByZXNzQXBwLldpbi5UZW1wbGF0ZXMuUmliYm9uLlhhZlJpYmJvbkNvbnRyb2xWMjwvcHJvcGVydHk+DQogICAgPHByb3BlcnR5IG5hbWU9Ikl0ZW0yIiB0eXBlPSJTeXN0ZW0uU3RyaW5nIj5EZXZFeHByZXNzLlh0cmFCYXJzLlJpYmJvbi5SaWJib25TdGF0dXNCYXI8L3Byb3BlcnR5Pg0KICA8L3Byb3BlcnR5Pg0KPC9YdHJhU2VyaWFsaXplcj4=" IsNewNode="True">
+      <FormStates IsNewNode="True">
+        <FormState Id="Default" State="Maximized" MaximizedOnScreen="\\.\DISPLAY1" X="2437" Y="-19" Width="1958" Height="1110" IsNewNode="True" />
+      </FormStates>
+      <NavBarCustomization Width="228" NavigationPaneMaxVisibleGroups="5" IsNewNode="True">
+        <NavBarGroupCustomization Id="AnaIslemler" IsNewNode="True" />
+        <NavBarGroupCustomization Id="Default" IsNewNode="True" />
+        <NavBarGroupCustomization Id="HastaIslemleri" IsNewNode="True" />
+        <NavBarGroupCustomization Id="KPI" IsNewNode="True" />
+        <NavBarGroupCustomization Id="Reports" IsNewNode="True" />
+        <NavBarGroupCustomization Id="SistemAyarlari" IsNewNode="True" />
+        <NavBarGroupCustomization Id="StokKontrol" IsNewNode="True" />
+        <NavBarGroupCustomization Id="Workflow" IsNewNode="True" />
+      </NavBarCustomization>
+    </Template>
+  </Templates>
+  <Views>
+    <ListView Id="BelgeBaslik_BelgeSatir_ListView">
+      <Columns>
+        <ColumnInfo Id="StokList.KDVorani.KDVorani" PropertyName="StokList.KDVorani.KDVorani" Index="-1" Width="94" IsNewNode="True" />
+        <ColumnInfo Id="StokList" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="StokList.StokMarka" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Miktar" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="KDVtutari" SortIndex="-1" SortOrder="None" />
+      </Columns>
+    </ListView>
+    <DetailView Id="BelgeBaslik_DetailView" AllowEdit="True" />
+    <ListView Id="BelgeBaslik_ListView" FilterEnabled="True">
+      <Columns>
+        <ColumnInfo Id="KDVDahiltoplam" Index="-1" />
+        <ColumnInfo Id="KDVtoplam" Index="-1" />
+        <ColumnInfo Id="ToplamFiyat" Index="-1" />
+        <ColumnInfo Id="BelgeTarih" SortIndex="0" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Cari_ListView">
+      <Columns>
+        <ColumnInfo Id="CariKodu" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Event_ListView" DayViewTimeScale="00:30:00" WorkWeekViewTimeScale="00:30:00" FullWeekViewTimeScale="00:30:00" SelectedIntervalStart="2020-12-03" SelectedIntervalEnd="2020-12-04" />
+    <ListView Id="Event_Resources_ListView">
+      <Columns>
+        <ColumnInfo Id="Caption" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="GelirGider_ListView" FilterEnabled="True">
+      <Columns>
+        <ColumnInfo Id="TaksitSayisi" Index="-1" SortIndex="1" />
+        <ColumnInfo Id="Aciklama" Index="4" />
+        <ColumnInfo Id="OdemeTarihi" Index="5" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="HastaListesi_DetailView" ImageName="" />
+    <ListView Id="HastaListesi_ListView" NewItemRowPosition="Top" AutoExpandAllGroups="False" FreezeColumnIndices="False" DataAccessMode="Client" MasterDetailMode="ListViewAndDetailView">
+      <Columns>
+        <ColumnInfo Id="HastaAd" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="Oid" Width="248" />
+        <ColumnInfo Id="TCKimlikNumarası" Width="133" />
+        <ColumnInfo Id="HastaAdSoyad" Width="116" />
+        <ColumnInfo Id="dogumTarihi" Width="102" />
+        <ColumnInfo Id="TelefonNo" Width="98" />
+        <ColumnInfo Id="cinsiyet" Width="70" />
+        <ColumnInfo Id="KanGrubu" Width="85" />
+        <ColumnInfo Id="HastaKayitTarihi" Width="126" />
+      </Columns>
+      <SplitLayout SplitterPosition="313" />
+    </ListView>
+    <ListView Id="HastaListesi_LookupListView" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="dogumTarihi" Index="-1" />
+        <ColumnInfo Id="HastaKayitTarihi" Index="-1" />
+        <ColumnInfo Id="KanGrubu" Index="-1" />
+        <ColumnInfo Id="TelefonNo" Index="3" />
+        <ColumnInfo Id="cinsiyet" Index="4" />
+      </Columns>
+      <SplitLayout SplitterPosition="276" />
+    </ListView>
+    <ListView Id="HastaListesi_Muayeneler_ListView">
+      <Columns>
+        <ColumnInfo Id="MuayeneTarihi" SortIndex="0" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Muayene_HastaIslemleri_ListView">
+      <Columns>
+        <ColumnInfo Id="ilkSeansTrh" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+      <SplitLayout SplitterPosition="914" />
+    </ListView>
+    <ListView Id="Muayene_ListView" FilterEnabled="True">
+      <Columns>
+        <ColumnInfo Id="HastaListesi" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="Bulgular" SortIndex="-1" SortOrder="None" />
+      </Columns>
+    </ListView>
+    <ListView Id="Muayene_MuayeneStokBilgisi_ListView">
+      <Columns>
+        <ColumnInfo Id="StokList" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="MuayeneStok_ListView" MasterDetailMode="ListViewOnly">
+      <SplitLayout SplitterPosition="1311" />
+    </ListView>
+    <DetailView Id="RandevuTakip_DetailView">
+      <Items>
+        <PropertyEditor Id="Hastalar" LookupEditorMode="AllItemsWithSearch" />
+        <PropertyEditor Id="StartOn" LookupEditorMode="Auto" />
+      </Items>
+    </DetailView>
+    <ListView Id="RandevuTakip_ListView" DayViewTimeScale="00:30:00" WorkWeekViewTimeScale="00:30:00" FullWeekViewTimeScale="00:30:00" SelectedIntervalStart="2020-12-24" SelectedIntervalEnd="2020-12-25" />
+    <ListView Id="Resource_Events_ListView" DayViewTimeScale="00:30:00" WorkWeekViewTimeScale="00:30:00" FullWeekViewTimeScale="00:30:00" SelectedIntervalStart="2020-12-08" SelectedIntervalEnd="2020-12-09" />
+    <DetailView Id="RuleSetValidationResult_ByTarget_Error_DetailView">
+      <Items>
+        <StaticImage Id="ValidationResultsImage" ImageName="State_Validation_Warning_48x48" />
+      </Items>
+    </DetailView>
+    <ListView Id="Stok_ListView" ShowFindPanel="False" FilterEnabled="True" />
+  </Views>
+</Application>

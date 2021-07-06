@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="GelirGider_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="GelirGider">
+              <LayoutItem Id="ParaHareketTür" ViewItem="ParaHareketTür" Index="0" RelativeSize="7.03971119133574" Removed="True" />
+              <LayoutItem Id="Ucret" ViewItem="Ucret" Index="1" RelativeSize="4.6931407942238268" Removed="True" />
+              <LayoutItem Id="Aciklama" Index="2" RelativeSize="89.16967509025271" Removed="True" />
+              <LayoutItem Id="Kategori" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="BelgeSatir_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

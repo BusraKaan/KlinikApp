@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="GelirGider_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Item1">
+              <LayoutGroup Id="Autoc02e5cde-430a-4410-bdfb-eed414ce5d68">
+                <LayoutGroup Id="Autoc30527bd-cea3-47f5-9540-adb77d626e12">
+                  <LayoutGroup Id="Autoa852f8ac-6022-46f3-8f4f-ffbe6f6444a1">
+                    <LayoutItem Id="OdemeTür" ViewItem="OdemeTür" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="BelgeSatir_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

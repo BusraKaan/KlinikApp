@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="BelgeSatir_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="StokList" RelativeSize="4.6511627906976747" />
+              <LayoutItem Id="Miktar" RelativeSize="4.6511627906976747" />
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

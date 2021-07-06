@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="BelgeBaslik_BelgeSatir_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="BelgeBaslikID" Index="6" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="StokList.SatisFiyat" PropertyName="StokList.SatisFiyat" Index="4" Width="94" />
+        <ColumnInfo Id="StokList.AlisFiyat" PropertyName="StokList.AlisFiyat" Index="3" Width="94" />
+      </Columns>
+    </ListView>
+    <DetailView Id="BelgeSatir_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="StokList.SatisFiyat" PropertyName="StokList.SatisFiyat" />
+        <PropertyEditor Id="StokList.AlisFiyat" PropertyName="StokList.AlisFiyat" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="BelgeBaslikID" RelativeSize="6.4400715563506266" />
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

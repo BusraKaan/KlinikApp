@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="HastaSarfMalzemeleri_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="SarfMalzemeler" LookupProperty="SarfAdi" />
+      </Items>
+    </DetailView>
+    <DetailView Id="HastaUrunleri_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Urunler" LookupProperty="UrunAdi" />
+      </Items>
+    </DetailView>
+    <ListView Id="Muayene_HastaSarfMalzeme_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="SarfMalzemeler" LookupProperty="SarfAdi" />
+      </Columns>
+    </ListView>
+    <ListView Id="Muayene_HastaUrunler_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Urunler" LookupProperty="UrunAdi" />
+      </Columns>
+    </ListView>
+    <DetailView Id="BelgeSatir_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BelgeSatir">
+              <LayoutItem Id="StokList.AlisFiyat" ViewItem="StokList.AlisFiyat" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Muayene_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs" RelativeSize="39.405204460966544">
+            <LayoutGroup Id="HastaIslemleri" RelativeSize="100">
+              <LayoutItem Id="HastaIslemleri" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="HastaUrunler" RelativeSize="100">
+              <LayoutItem Id="HastaUrunler" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="HastaSarfMalzeme" RelativeSize="100">
+              <LayoutItem Id="HastaSarfMalzeme" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

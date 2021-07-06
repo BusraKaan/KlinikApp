@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="HastaListesi_Muayeneler_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="SarfMalzeme" LookupProperty="SarfAdi" />
+        <ColumnInfo Id="Islemler" LookupProperty="IslemAdi" />
+        <ColumnInfo Id="Uruns" LookupProperty="UrunAdi" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Muayene_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Islemler" LookupProperty="IslemAdi" />
+        <PropertyEditor Id="SarfMalzeme" LookupProperty="SarfAdi" />
+        <PropertyEditor Id="SarfMalzemeler" LookupProperty="Object.SarfAdi" />
+        <PropertyEditor Id="Uruns" LookupProperty="UrunAdi" />
+        <PropertyEditor Id="UygulananIslemler" LookupProperty="Object.IslemAdi" />
+      </Items>
+    </DetailView>
+    <ListView Id="Muayene_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="SarfMalzeme" LookupProperty="SarfAdi" />
+        <ColumnInfo Id="Islemler" LookupProperty="IslemAdi" />
+        <ColumnInfo Id="Uruns" LookupProperty="UrunAdi" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="HastaListesi_Muayeneler_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="MuayeneTarihi" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="RandevuSaati" SortIndex="-1" SortOrder="None" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
